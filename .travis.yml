@@ -28,7 +28,7 @@ before_deploy:
   - cp build/libs/*.jar before-deploy/
   - cd before-deploy && zip -r before-deploy *
   - cd ../ && mkdir -p deploy
-  - mv before-deploy/before-deploy.zip deploy/springboow-aws-webservice.zip
+  - mv before-deploy/before-deploy.zip deploy/springboot-aws-webservice.zip
 
 deploy:
   - provider: s3
@@ -46,7 +46,7 @@ deploy:
     bucket: springboot-aws-build-bucket
     key: springboot-aws-webservice.zip
     bundle_type: zip
-    application: springboow-aws-webservice
-    deployment_group: springboow-aws-webservice-group
+    application: springboot-aws-webservice
+    deployment_group: springboot-aws-webservice-group
     region: ap-northeast-2
     wait-until-deployed: true
